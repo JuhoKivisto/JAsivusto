@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/JuhoKivisto/JAsivusto/issues"
   },
-  "homepage": "https://github.com/JuhoKivisto/JAsivusto#readme"
+  "homepage": "https://github.com/JuhoKivisto/JAsivusto#readme",
+  "dependencies": {
+    "express-handlebars": "^3.0.0"
+  }
 }

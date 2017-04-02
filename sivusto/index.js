@@ -40,4 +40,3 @@ app.listen(app.get('port'), function(){
 	app.get('port') + '; Sammuta Ctrl-C -yhdistelmällä');
 })
 
-//testi
