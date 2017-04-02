@@ -1,0 +1,23 @@
+{
+  "name": "ja",
+  "version": "1.0.0",
+  "description": "Jalkahoitola Amalia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuhoKivisto/JAsivusto.git"
+  },
+  "keywords": [
+    "jalkahoitola",
+    "amalia"
+  ],
+  "author": "dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuhoKivisto/JAsivusto/issues"
+  },
+  "homepage": "https://github.com/JuhoKivisto/JAsivusto#readme"
+}
