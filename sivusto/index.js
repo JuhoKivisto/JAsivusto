@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 
 var app = express();
 
@@ -9,8 +9,8 @@ app.set('view engine', '.hbs');
 
 app.set('port', process.env.PORT || 3000);
 
-app.get('/home', function(req,res){
-	res.render('main');
+app.get('/', function(req,res){
+	res.render('home');
 })
 
 app.get('/tietoja', function(req,res){
@@ -39,4 +39,3 @@ app.listen(app.get('port'), function(){
 	console.log('Web-palvelin käynnissä http:\\localhost:' +
 	app.get('port') + '; Sammuta Ctrl-C -yhdistelmällä');
 })
-
