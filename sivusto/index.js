@@ -8,6 +8,7 @@ app.engine('.hbs', exphbs({
 	defaultLayout: 'main',
 	extname: '.hbs'
 }));
+
 app.set('view engine', '.hbs');
 
 app.set('port', process.env.PORT || 3000);
@@ -15,14 +16,16 @@ app.set('port', process.env.PORT || 3000);
 app.get('/', function (req, res) {
 	res.render('home');
 })
-
-app.get('/tietoja', function (req, res) {
-
-	//res.type('text/html');
-	//res.send('<h1>Hauskoja tietoja riemulomista</h1>');
-	res.render('tietoja');
+app.get('/palvelut', function (req, res) {
+	res.render('palvelut');
 });
 
+app.get('/Tuotteet', function (req, res) {
+	res.render('tuotteet');
+});
+app.get('/ajanvaraus', function (req, res) {
+	res.render('ajanvaraus');
+});
 
 app.use(function (req, res) {
 
