@@ -13,6 +13,25 @@ app.set('view engine', '.hbs');
 
 app.set('port', process.env.PORT || 3000);
 
+var mongoose = require('mongoose');
+var hoito =require('./models/hoito.js');
+var opts = {
+	server: {
+		socketOptions : { keepAlive: 120}
+	}
+};
+mongoose.connect('mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi', opts);
+
+hoito.find(function(err, hoidot){
+	if(err){
+		console.err(err);
+	}
+	if(hoidot.length){
+		return;
+	}
+});
+
+
 app.get('/', function (req, res) {
 	res.render('home');
 })

@@ -1,0 +1,1 @@
+mongoose.connect('mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi', opts);
