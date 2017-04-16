@@ -2,17 +2,22 @@
   
 <head> 
   <meta charset="utf-8">
+	<link rel="stylesheet" href="gridiculous.css">
 <title>Jalkahoitola Amalia</title> 
 
 <style>
+
+    :target {
+        background-color: #4BB5C1;
+        padding: 8px;
+    }
 body {
     margin: 0;
-    background-color: #EDF7F2;
+    background-color: #EDF7F2
     font-size: 100%;
     line-height: 1.6875
     }
 ul.contact {
-
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -70,6 +75,7 @@ div.content {
         float: none;
     }
 }
+
 /*
  * Gridiculous
  *
@@ -322,6 +328,12 @@ table {
     box-sizing: border-box
 }
 
+body {
+    font-size: 100%;
+    line-height: 1.6875
+    
+}
+
 .grid {
     margin: 0 auto;
     max-width: 1200px;
@@ -534,6 +546,7 @@ only screen and (max-device-width: 768px) and (orientation:portrait) {
         margin-bottom: 20px
     }
 }
+
 </style> 
 
 </head> 
@@ -541,10 +554,10 @@ only screen and (max-device-width: 768px) and (orientation:portrait) {
 <body> 
     
 <ul class="sidenav">
-    <li><a class="active" href="http://localhost:3000/"> Etusivu </a></li>
-    <li><a href="http://localhost:3000/palvelut"> Palvelut </a></li>
-    <li><a href="http://localhost:3000/tuotteet"> Tuotteet </a></li>
-    <li><a href="http://localhost:3000/ajanvaraus"> Ajanvaraus </a></li>
+    <li><a id="main" href="/#main"> Etusivu </a></li>
+    <li><a id="palvelut" href="/palvelut#palvelut" > Palvelut </a></li>
+    <li><a id="tuotteet" href="/tuotteet#tuotteet"> Tuotteet </a></li>
+    <li><a id="ajanvaraus" href="/ajanvaraus#ajanvaraus"> Ajanvaraus </a></li> 
 </ul>
 
 <div class="content">

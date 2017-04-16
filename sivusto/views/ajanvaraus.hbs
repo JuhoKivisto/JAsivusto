@@ -1,2 +1,27 @@
+<body>
+var text = 'Hello world from \n\n' + req.body.name;
 
+var mailOptions = {
+    from: 'example@gmail.com>', // sender address
+    to: 'receiver@destination.com', // list of receivers
+    subject: 'Email Example', // Subject line
+    text: text //, // plaintext body
+    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+};
+</body>
+
+{{!--<script>
+    window.open('mailto:jkiviniitty@gmail.com')
+</script>
 <h1>Ajanvaraus</h1>
+
+<form action="mailto:jkiviniitty@gmail.com" method="post" enctype="text/plain">
+Name:<br>
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="text" name="mail"><br>
+Comment:<br>
+<input type="text" name="comment" size="50"><br><br>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>--}}

@@ -64,3 +64,21 @@ app.listen(app.get('port'), function () {
 	console.log('Web-palvelin käynnissä http:\\localhost:' +
 		app.get('port') + '; Sammuta Ctrl-C -yhdistelmällä');
 })
+
+// email ratkaisu
+
+var nodemailer = require('nodemailer');
+
+var router = express.Router();
+app.use('/ajanvaraus', router);
+router.post('/', handleSayHello); // handle the route at yourdomain.com/sayHello
+
+function handleSayHello(req, res) {
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'jalkahoitola.amalia@gmail.com', // Your email id
+            pass: 'tefa1965' // Your password
+        }
+    });
+}
