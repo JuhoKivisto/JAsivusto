@@ -10,7 +10,7 @@ muutosten vahvistaminen:
 git commit -m 'vahvistus kommentti'
 
 muutosten siirtäminen git hubiin:
-(first time): git push -u origin '<branch>'
+(first time): git push -u origin branchName
 git push
 
 muutosten päivittäminen omalle koneelle:
