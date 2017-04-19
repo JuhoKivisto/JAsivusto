@@ -14,19 +14,19 @@ app.set('view engine', '.hbs');
 app.set('port', process.env.PORT || 3000);
 
 var mongoose = require('mongoose');
-var hoito =require('./models/hoito.js');
+var tuote = require('./models/hoito.js');
 var opts = {
 	server: {
-		socketOptions : { keepAlive: 120}
+		socketOptions: { keepAlive: 120 }
 	}
 };
 mongoose.connect('mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi', opts);
 
-hoito.find(function(err, hoidot){
-	if(err){
+tuote.find(function (err, tuotteet) {
+	if (err) {
 		console.err(err);
 	}
-	if(hoidot.length){
+	if (tuotteet.length) {
 		return;
 	}
 });
@@ -74,11 +74,11 @@ app.use('/ajanvaraus', router);
 router.post('/', handleSayHello); // handle the route at yourdomain.com/sayHello
 
 function handleSayHello(req, res) {
-    var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'jalkahoitola.amalia@gmail.com', // Your email id
-            pass: 'tefa1965' // Your password
-        }
-    });
+	var transporter = nodemailer.createTransport({
+		service: 'Gmail',
+		auth: {
+			user: 'jalkahoitola.amalia@gmail.com', // Your email id
+			pass: 'tefa1965' // Your password
+		}
+	});
 }
