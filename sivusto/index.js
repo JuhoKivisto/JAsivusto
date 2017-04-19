@@ -14,7 +14,7 @@ app.set('view engine', '.hbs');
 app.set('port', process.env.PORT || 3000);
 
 var mongoose = require('mongoose');
-var tuote = require('./models/hoito.js');
+var tuote = require('./models/tuote.js');
 var opts = {
 	server: {
 		socketOptions: { keepAlive: 120 }
@@ -27,7 +27,7 @@ tuote.find(function (err, tuotteet) {
 		console.err(err);
 	}
 	if (tuotteet.length) {
-		return;
+		console.log(tuotteet);
 	}
 });
 
