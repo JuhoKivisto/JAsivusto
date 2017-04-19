@@ -14,23 +14,29 @@ app.set('view engine', '.hbs');
 app.set('port', process.env.PORT || 3000);
 
 var mongoose = require('mongoose');
-var tuote = require('./models/tuote.js');
+var Tuote = require('./models/tuote.js');
 var opts = {
 	server: {
 		socketOptions: { keepAlive: 120 }
 	}
 };
-mongoose.connect('mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi', opts);
 
-tuote.find(function (err, tuotteet) {
+var MURI = 'mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi'
+//mongoose.connect('mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi', opts);
+//mongoose.connect('mongodb://jas:1234@ds161890.mlab.com:61890/jasivut',opts);
+mongoose.connect(MURI, opts);
+var db = mongoose.connection;
+
+
+
+Tuote.find(function (err, tuotteet) {
 	if (err) {
 		console.err(err);
 	}
 	if (tuotteet.length) {
-		console.log(tuotteet);
+		return;
 	}
 });
-
 
 app.get('/', function (req, res) {
 	res.render('home');
@@ -40,7 +46,11 @@ app.get('/palvelut', function (req, res) {
 });
 
 app.get('/Tuotteet', function (req, res) {
-	res.render('tuotteet');
+	//db.find(function(doc)
+	//{
+		res.render('tuotteet');
+	//})
+	
 });
 app.get('/ajanvaraus', function (req, res) {
 	res.render('ajanvaraus');

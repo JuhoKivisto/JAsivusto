@@ -1,10 +1,11 @@
+{{!--
+
 <body>
     var text = 'Hello world from \n\n' + req.body.name; var mailOptions = { from: 'example@gmail.com>', // sender address to:
     'receiver@destination.com', // list of receivers subject: 'Email Example', // Subject line text: text //, // plaintext
     body // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead };
 </body>
-
-{{!--
+--}} {{!--
 <script>
     window.open('mailto:jkiviniitty@gmail.com')
 
@@ -21,3 +22,40 @@
     <input type="submit" value="Send">
     <input type="reset" value="Reset">
 </form>--}}
+
+<div class="formContainer">
+    <form class="form-horizontal ajanvarausForm" role="form" action="/prosessoi?form=ajanvaraus" method="POST">
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <div class="form-group">
+            <label for="fieldName" class="col-sm-2 control-label">Nimi</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="fieldName" name="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fieldEmail" class="col-sm-2 control-label">Sähköpostiosoite</label>
+            <div class="col-sm-4">
+                <input type="email" class="form-control" required id="fieldEmail" name="email">
+            </div>
+        </div>
+
+        <div>
+
+            <label for="fieldViesti" class="col-sm-2 control-label">Viesti</label>
+
+            <div class="col-sm-4"> 
+
+                <textarea name="message" rows="10" cols="22"></textarea>
+
+            </div>
+
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-default">Lähetä</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -5,5 +5,5 @@ var tuoteSchema = mongoose.Schema({
 	hinta : String
 });
 
-tuote = mongoose.model('tuote',tuoteSchema);
-module.exports = tuote;
+Tuote = mongoose.model('Tuote',tuoteSchema);
+module.exports = Tuote;
