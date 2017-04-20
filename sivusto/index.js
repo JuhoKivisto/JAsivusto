@@ -25,7 +25,7 @@ var MURI = 'mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi'
 //mongoose.connect('mongodb://jadb:1234@ds155080.mlab.com:55080/varisjengi', opts);
 //mongoose.connect('mongodb://jas:1234@ds161890.mlab.com:61890/jasivut',opts);
 mongoose.connect(MURI, opts);
-var db = mongoose.connection;
+//var db = mongoose.connection;
 
 
 
@@ -46,10 +46,10 @@ app.get('/palvelut', function (req, res) {
 });
 
 app.get('/Tuotteet', function (req, res) {
-	//db.find(function(doc)
-	//{
+	Tuote.find(function(doc)
+	{
 		res.render('tuotteet');
-	//})
+	})
 	
 });
 app.get('/ajanvaraus', function (req, res) {
