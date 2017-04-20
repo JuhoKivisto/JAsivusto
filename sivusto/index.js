@@ -46,6 +46,7 @@ app.get('/palvelut', function (req, res) {
 });
 
 app.get('/Tuotteet', function (req, res) {
+<<<<<<< HEAD
 	
 	Tuote.find(function(err, tuotteet){
 		var Context = {
@@ -59,6 +60,11 @@ app.get('/Tuotteet', function (req, res) {
 		}
 			res.render('tuotteet', Context);
 
+=======
+	Tuote.find(function(doc)
+	{
+		res.render('tuotteet');
+>>>>>>> 1d33101c79428ef0ef9f410d0e0ffad5f924e550
 	})
 	
 });
