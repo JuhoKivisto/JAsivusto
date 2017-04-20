@@ -48,9 +48,18 @@ app.get('/palvelut', function (req, res) {
 app.get('/Tuotteet', function (req, res) {
 
 	
-	
-			res.render('tuotteet');
-	
+	Tuote.find(function(err, tuotteet){
+		var Context = {
+			tuotteet:tuotteet.map(function(tuote){
+				return{
+				nimi: tuote.nimi,
+				kategoria: tuote.kategoria,
+				kuvaus: tuote.kuvaus,
+				}
+			})
+		};
+			res.render('tuotteet', Context);
+	});
 });
 app.get('/ajanvaraus', function (req, res) {
 	res.render('ajanvaraus');
