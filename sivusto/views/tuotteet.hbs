@@ -1,18 +1,20 @@
 <h1>Tuotteet</h1>
 
-{{#each tuotteet}}
 <div class="tuote">
 
-    <!--<h3>{{nimi}}</h3>
-    <p>{{kategoria}}</p>
-    <p>{{hinta}}</p>
-    !-->
+    <table>
 
-    <ul>
-        <li>{{nimi}}</li>
-        <li>{{kategoria}}</li>
-        <li>{{hinta}}</li>  
-    </ul>
-    
-     </div>
-     {{/each}}
+        <tr>
+            <th>Nimi</th>
+            <th>Hinta</th>
+        </tr>
+
+{{#each tuotteet}}
+        <tr>
+            <td>{{nimi}}</td>
+            <td>{{hinta}}</td>
+        </tr>
+{{/each}}
+    </table>
+
+</div>
