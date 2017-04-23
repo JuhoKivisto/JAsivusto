@@ -48,17 +48,19 @@ app.get('/palvelut', function (req, res) {
 app.get('/Tuotteet', function (req, res) {
 
 	
-	Tuote.find(function(err, tuotteet){
-		var Context = {
-			tuotteet:tuotteet.map(function(tuote){
+	Tuote.find({},function(err, tuotteet){
+		var context = {
+			tuotteet: tuotteet.map(function(tuote){
 				return{
 				nimi: tuote.nimi,
 				kategoria: tuote.kategoria,
-				kuvaus: tuote.kuvaus,
+				hinta: tuote.hinta,
 				}
 			})
 		};
-			res.render('tuotteet', Context);
+
+		
+			res.render('tuotteet',context);
 	});
 });
 app.get('/ajanvaraus', function (req, res) {
