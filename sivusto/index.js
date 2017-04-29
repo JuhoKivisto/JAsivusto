@@ -90,7 +90,36 @@ app.listen(app.get('port'), function () {
 
 // email ratkaisu
 
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+			type: 'OAuth2',
+            user: 'jalkahoitola.amalia@gmail.com',
+            clientId: ' 500544382944-uu5oj0s7m0sg40vp0l8askbmfdj2lljd.apps.googleusercontent.com ',
+            clientSecret: ' i7Rgt-PiFhCY5kKdKxJoWXnl ',
+            refreshToken: '1/-juzPAepWprNAkUlPaweQYiydt3V7wvCEed7ypoI6lQL3no1EMWUDBDw-KOq-lVY'
+    }
+})
+
+var mailOptions = {
+    from: 'jalkahoitola.amalia@gmail.com',
+    to: 'jalkahoitola.amalia@gmail.com',
+    subject: 'Nodemailer test',
+    text: 'Hello World!!'
+}
+
+transporter.sendMail(mailOptions, function (err, res) {
+    if(err){
+        console.log('Error');
+    } else {
+        console.log('Email Sent');
+    }
+})
+
+
+/*var nodemailer = require('nodemailer');
 
 var router = express.Router();
 app.use('/ajanvaraus', router);
@@ -104,4 +133,4 @@ function handleSayHello(req, res) {
 			pass: 'tefa1965' // Your password
 		}
 	});
-}
+}*/
