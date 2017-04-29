@@ -1,0 +1,28 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+figure {
+    width: 300px; height: 200px;
+    position: relative;  
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; 
+}
+
+
